@@ -1,4 +1,4 @@
-# CodeAlpha_DevOps
+﻿# CodeAlpha_DevOps
 
 DevOps internship tasks for **CodeAlpha**.
 
@@ -15,15 +15,15 @@ DevOps internship tasks for **CodeAlpha**.
 | Task | Title | Folder | Status |
 |------|--------|--------|--------|
 | **1** | CI/CD Pipeline using Azure | [`task1-azure-cicd/`](./task1-azure-cicd) | Ready to configure in Azure |
-| 2 | Jenkins Remoting Project | — | Not started |
-| 3 | Java Application using Gradle | — | Not started |
+| 2 | Jenkins Remoting Project | â€” | Not started |
+| 3 | Java Application using Gradle | â€” | Not started |
 | **4** | Web Server using Docker | [`task4-docker-webserver/`](./task4-docker-webserver) | Ready (install Docker to run) |
 
 You need **any 2 or 3** tasks for the certificate. This repo targets **Task 1 + Task 4**.
 
 ---
 
-## Task 4 — Web Server using Docker
+## Task 4 â€” Web Server using Docker
 
 Nginx static site packaged in Docker.
 
@@ -38,7 +38,7 @@ Full guide: [`task4-docker-webserver/README.md`](./task4-docker-webserver/README
 
 ---
 
-## Task 1 — CI/CD Pipeline using Azure
+## Task 1 â€” CI/CD Pipeline using Azure
 
 Pipeline builds the Task 4 image, pushes to **Azure Container Registry**, deploys to **Azure App Service**.
 
@@ -53,9 +53,8 @@ Full guide: [`task1-azure-cicd/README.md`](./task1-azure-cicd/README.md)
 
 ## Repo contents
 
-- [`CodeAlpha_DevOps_Tasks.pdf`](./CodeAlpha_DevOps_Tasks.pdf) — official instructions  
-- `task4-docker-webserver/` — Docker web server  
-- `task1-azure-cicd/` — Azure Pipelines + setup script  
+- `task4-docker-webserver/` â€” Docker web server  
+- `task1-azure-cicd/` â€” Azure Pipelines + setup script  
 
 ---
 
