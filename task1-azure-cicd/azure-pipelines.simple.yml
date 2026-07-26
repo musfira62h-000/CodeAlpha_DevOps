@@ -8,9 +8,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  acrLoginServer: 'codealphadevopsacr.azurecr.io'
+  # Updated from lab setup (Azure for Students)
+  acrLoginServer: 'codealphacr15128.azurecr.io'
   imageName: 'codealpha-webserver'
   tag: '$(Build.BuildId)'
+  # Set this to your Web App name from Portal (e.g. codealphaweb15128)
+  appServiceName: 'codealphaweb15128'
 
 steps:
   - task: Docker@2
@@ -29,5 +32,5 @@ steps:
     displayName: Deploy to App Service
     inputs:
       azureSubscription: 'CodeAlpha-Azure-Connection'
-      appName: 'codealpha-devops-web'
+      appName: '$(appServiceName)'
       containers: '$(acrLoginServer)/$(imageName):$(tag)'
