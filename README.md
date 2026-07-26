@@ -8,60 +8,54 @@ DevOps internship tasks for **CodeAlpha**.
 - **Domain:** DevOps  
 - **Organization:** CodeAlpha  
 
-Complete **any 2 or 3** of the 4 tasks below for certificate eligibility.
+---
+
+## Completed / in progress
+
+| Task | Title | Folder | Status |
+|------|--------|--------|--------|
+| **1** | CI/CD Pipeline using Azure | [`task1-azure-cicd/`](./task1-azure-cicd) | Ready to configure in Azure |
+| 2 | Jenkins Remoting Project | — | Not started |
+| 3 | Java Application using Gradle | — | Not started |
+| **4** | Web Server using Docker | [`task4-docker-webserver/`](./task4-docker-webserver) | Ready (install Docker to run) |
+
+You need **any 2 or 3** tasks for the certificate. This repo targets **Task 1 + Task 4**.
 
 ---
 
-## Task list
+## Task 4 — Web Server using Docker
 
-| Task | Title | Status |
-|------|--------|--------|
-| 1 | CI/CD Pipeline using Azure | Planned |
-| 2 | Jenkins Remoting Project | Planned |
-| 3 | Java Application using Gradle | Planned |
-| 4 | Web Server using Docker | Planned |
+Nginx static site packaged in Docker.
 
-### TASK 1 — CI/CD Pipeline using Azure
-- Build an automated CI/CD pipeline with Azure Pipelines  
-- Use Azure Container Registry for container storage  
-- Deploy web apps via Azure App Service automatically  
-- Monitor pipeline execution  
+```bash
+cd task4-docker-webserver
+docker build -t codealpha-webserver .
+docker run -d --name codealpha-web -p 8080:80 codealpha-webserver
+# open http://localhost:8080
+```
 
-### TASK 2 — Jenkins Remoting Project
-- Set up Jenkins Remoting to connect remote Jenkins nodes  
-- Distribute build loads across machines securely  
-- Run jobs on remote architectures  
-- Improve security with node isolation  
+Full guide: [`task4-docker-webserver/README.md`](./task4-docker-webserver/README.md)
 
-### TASK 3 — Java Application using Gradle
-- Automate Java project builds using Gradle  
-- Manage dependencies efficiently  
-- Integrate CI/CD for continuous delivery  
-- Streamline build and deployment  
+---
 
-### TASK 4 — Web Server using Docker
-- Learn Docker containerization basics  
-- Deploy and manage a web server inside Docker  
-- Understand container lifecycle and commands  
-- Monitor container health and troubleshoot  
+## Task 1 — CI/CD Pipeline using Azure
+
+Pipeline builds the Task 4 image, pushes to **Azure Container Registry**, deploys to **Azure App Service**.
+
+1. Create Azure resources (`setup-azure.sh` or Portal)  
+2. Connect GitHub repo in Azure DevOps  
+3. Add service connections: `acr-connection` + `CodeAlpha-Azure-Connection`  
+4. Run pipeline from `task1-azure-cicd/azure-pipelines.simple.yml`  
+
+Full guide: [`task1-azure-cicd/README.md`](./task1-azure-cicd/README.md)
 
 ---
 
 ## Repo contents
 
-- [`CodeAlpha_DevOps_Tasks.pdf`](./CodeAlpha_DevOps_Tasks.pdf) — official CodeAlpha DevOps task instructions  
-
-Task project folders will be added as each task is completed (e.g. `task4-docker-webserver/`).
-
----
-
-## Submission checklist (CodeAlpha)
-
-1. Share internship status on LinkedIn and tag `@CodeAlpha`  
-2. Upload source to GitHub (`CodeAlpha_ProjectName`)  
-3. Post a LinkedIn video with the GitHub link  
-4. Submit via the WhatsApp submission form  
-5. Complete at least **2** tasks  
+- [`CodeAlpha_DevOps_Tasks.pdf`](./CodeAlpha_DevOps_Tasks.pdf) — official instructions  
+- `task4-docker-webserver/` — Docker web server  
+- `task1-azure-cicd/` — Azure Pipelines + setup script  
 
 ---
 

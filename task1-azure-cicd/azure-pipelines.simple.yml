@@ -1,0 +1,33 @@
+# Simpler Azure Pipelines file — use this if you prefer one stage first.
+# Rename to azure-pipelines.yml (or point the pipeline at this file) after setting variables.
+
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  acrLoginServer: 'codealphadevopsacr.azurecr.io'
+  imageName: 'codealpha-webserver'
+  tag: '$(Build.BuildId)'
+
+steps:
+  - task: Docker@2
+    displayName: Build and push to ACR
+    inputs:
+      containerRegistry: 'acr-connection'
+      repository: '$(imageName)'
+      command: 'buildAndPush'
+      Dockerfile: 'task4-docker-webserver/Dockerfile'
+      buildContext: 'task4-docker-webserver'
+      tags: |
+        $(tag)
+        latest
+
+  - task: AzureWebAppContainer@1
+    displayName: Deploy to App Service
+    inputs:
+      azureSubscription: 'CodeAlpha-Azure-Connection'
+      appName: 'codealpha-devops-web'
+      containers: '$(acrLoginServer)/$(imageName):$(tag)'

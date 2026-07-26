@@ -1,0 +1,67 @@
+# CodeAlpha Task 1 — CI/CD Pipeline using Azure (multi-stage)
+# Builds Task 4 Docker web server → ACR → Azure App Service
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - task4-docker-webserver/**
+      - task1-azure-cicd/**
+
+variables:
+  # Service connections (create these in Azure DevOps → Project Settings)
+  azureSubscription: 'CodeAlpha-Azure-Connection'  # Azure Resource Manager
+  acrConnection: 'acr-connection'                  # Docker Registry → ACR
+
+  # --- Change these to YOUR Azure resource names ---
+  imageRepository: 'codealpha-webserver'
+  dockerfilePath: '$(Build.SourcesDirectory)/task4-docker-webserver/Dockerfile'
+  buildContext: '$(Build.SourcesDirectory)/task4-docker-webserver'
+  tag: '$(Build.BuildId)'
+  acrLoginServer: 'codealphadevopsacr.azurecr.io'  # youracr.azurecr.io
+  appServiceName: 'codealpha-devops-web'           # your App Service name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: Build and push image
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Docker@2
+            displayName: Build and push to ACR
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              buildContext: $(buildContext)
+              containerRegistry: $(acrConnection)
+              tags: |
+                $(tag)
+                latest
+
+  - stage: Deploy
+    displayName: Deploy to Azure App Service
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: DeployWeb
+        displayName: Deploy Web App
+        environment: 'production'
+        pool:
+          vmImage: $(vmImageName)
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebAppContainer@1
+                  displayName: Deploy container to App Service
+                  inputs:
+                    azureSubscription: $(azureSubscription)
+                    appName: $(appServiceName)
+                    containers: '$(acrLoginServer)/$(imageRepository):$(tag)'
