@@ -132,3 +132,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 13:** Web App `codealphaweb15128` Running. Container image set to `codealphacr15128.azurecr.io/codealpha-webserver:2` (pipeline deploy succeeded). Runtime status shows Issues Detected (common on Free F1 with custom containers).
 
+
+## Screenshot — Web App stopped (403)
+
+![403 stopped](./screenshots/14_webapp_403_stopped.png)
+
+**Figure 14:** Browser shows Error 403 — web app stopped (Free F1 quota / stop is common). App was previously Running with ACR image `codealpha-webserver:2`.
+
