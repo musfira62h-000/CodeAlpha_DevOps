@@ -26,3 +26,9 @@ Result:
 - Container `codealpha-web` running
 - `http://localhost:8080` → HTTP 200
 - `/health` → healthy
+
+## Screenshot — Container running in Docker Desktop
+
+![Container running](./screenshots/03_docker_container_running.png)
+
+**Figure 3:** Docker Desktop Containers — `codealpha-web` running, ports `8080:80`, Engine running.
