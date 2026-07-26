@@ -37,12 +37,23 @@ Azure Portal showed a successful deployment for the Web App in resource group `c
 
 ---
 
+## Screenshot — Azure DevOps organization
+
+Organization created: **musfira-codealpha** (Create a project screen).
+
+![Azure DevOps create project](./screenshots/03_azure_devops_create_project.png)
+
+**Figure 3:** Azure DevOps org `musfira-codealpha` — ready to create project.
+
+---
+
 ## Next steps
 
 1. ~~Confirm Web App name and URL~~ ✅  
-2. Create Azure DevOps project + pipeline  
-3. Service connections: `acr-connection` + Azure Resource Manager  
-4. Pipeline builds `task4-docker-webserver` → pushes to ACR → deploys to App Service  
+2. ~~Create Azure DevOps organization~~ ✅ `musfira-codealpha`  
+3. Create project `CodeAlpha-DevOps` + pipeline  
+4. Service connections: `acr-connection` + Azure Resource Manager  
+5. Pipeline builds `task4-docker-webserver` → pushes to ACR → deploys to App Service  
 
 > Note: Free **F1** may limit custom container pulls from ACR. If deploy fails, keep CI as build+push to ACR and upgrade plan to B1 when capacity is available.
 
