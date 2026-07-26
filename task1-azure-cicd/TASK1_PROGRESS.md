@@ -104,3 +104,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 8:** Service connection `acr-connection` (Docker Registry / service principal) created by Musfira Hassan.
 
+
+## Screenshot — Service connections ready
+
+![Service connections](./screenshots/09_service_connections_ready.png)
+
+**Figure 9:** `acr-connection` (Docker Registry) and `CodeAlpha-Azure-Connection` (Azure Resource Manager) configured.
+
