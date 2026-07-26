@@ -97,3 +97,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 7:** Review pipeline YAML — `azure-pipelines.simple.yml` with ACR `codealphacr15128` and App `codealphaweb15128`.
 
+
+## Screenshot — ACR service connection
+
+![acr-connection](./screenshots/08_acr_connection_created.png)
+
+**Figure 8:** Service connection `acr-connection` (Docker Registry / service principal) created by Musfira Hassan.
+
