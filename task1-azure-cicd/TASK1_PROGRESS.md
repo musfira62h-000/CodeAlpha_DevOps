@@ -66,3 +66,12 @@ acrLoginServer: 'codealphacr15128.azurecr.io'
 imageName: 'codealpha-webserver'
 appServiceName: 'codealphaweb15128'
 ```
+
+## Screenshot — Azure DevOps project created
+
+Project: **CodeAlpha-DevOps** in org **musfira-codealpha**.
+
+![Project home](./screenshots/04_azure_devops_project_home.png)
+
+**Figure 4:** Azure DevOps project home — CodeAlpha-DevOps (Private).
+
