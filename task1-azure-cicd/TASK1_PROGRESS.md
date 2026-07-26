@@ -125,3 +125,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 11:** Pipeline run succeeded (~1m 41s). Minor warning on Build and push to ACR output file (non-blocking).
 
+
+## Screenshot — Web App using ACR image
+
+![Web App ACR image](./screenshots/13_webapp_acr_image_deployed.png)
+
+**Figure 13:** Web App `codealphaweb15128` Running. Container image set to `codealphacr15128.azurecr.io/codealpha-webserver:2` (pipeline deploy succeeded). Runtime status shows Issues Detected (common on Free F1 with custom containers).
+
