@@ -90,3 +90,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 6:** Branch `main` · Path `/task1-azure-cicd/azure-pipelines.simple.yml` · Repo musfira62h-000/CodeAlpha_DevOps.
 
+
+## Screenshot — Review pipeline YAML
+
+![Review YAML](./screenshots/07_pipeline_review_yaml.png)
+
+**Figure 7:** Review pipeline YAML — `azure-pipelines.simple.yml` with ACR `codealphacr15128` and App `codealphaweb15128`.
+
