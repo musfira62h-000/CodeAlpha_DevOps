@@ -32,3 +32,13 @@ Result:
 ![Container running](./screenshots/03_docker_container_running.png)
 
 **Figure 3:** Docker Desktop Containers — `codealpha-web` running, ports `8080:80`, Engine running.
+
+## Screenshot — Browser localhost:8080
+
+![Browser](./screenshots/04_browser_localhost_8080.png)
+
+**Figure 4:** Browser at `http://localhost:8080` — CodeAlpha Task 4 Docker web page (Status Running).
+
+## Status
+
+Task 4 local demo **complete**.
