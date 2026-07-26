@@ -75,3 +75,18 @@ Project: **CodeAlpha-DevOps** in org **musfira-codealpha**.
 
 **Figure 4:** Azure DevOps project home — CodeAlpha-DevOps (Private).
 
+
+## Screenshot — Pipeline configure
+
+Chose configuration templates screen (Connect → Select → Configure).
+
+![Configure pipeline](./screenshots/05_pipeline_configure.png)
+
+**Figure 5:** Configure your pipeline — select Existing Azure Pipelines YAML file.
+
+## Screenshot — Select existing YAML
+
+![Select YAML](./screenshots/06_select_existing_yaml.png)
+
+**Figure 6:** Branch `main` · Path `/task1-azure-cicd/azure-pipelines.simple.yml` · Repo musfira62h-000/CodeAlpha_DevOps.
+
