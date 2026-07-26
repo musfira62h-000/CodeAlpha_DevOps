@@ -1,5 +1,4 @@
-# Simpler Azure Pipelines file — use this if you prefer one stage first.
-# Rename to azure-pipelines.yml (or point the pipeline at this file) after setting variables.
+
 
 trigger:
   - main
@@ -8,11 +7,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  # Updated from lab setup (Azure for Students)
+ 
   acrLoginServer: 'codealphacr15128.azurecr.io'
   imageName: 'codealpha-webserver'
   tag: '$(Build.BuildId)'
-  # Set this to your Web App name from Portal (e.g. codealphaweb15128)
+
   appServiceName: 'codealphaweb15128'
 
 steps:
