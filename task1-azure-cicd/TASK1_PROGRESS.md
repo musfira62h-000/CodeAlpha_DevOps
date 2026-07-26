@@ -111,3 +111,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 9:** `acr-connection` (Docker Registry) and `CodeAlpha-Azure-Connection` (Azure Resource Manager) configured.
 
+
+## Screenshot — Pipeline run started
+
+![Pipeline run](./screenshots/10_pipeline_run_started.png)
+
+**Figure 10:** Pipeline run `#20260726.1` — Set up CI with Azure Pipelines (in progress / summary).
+
