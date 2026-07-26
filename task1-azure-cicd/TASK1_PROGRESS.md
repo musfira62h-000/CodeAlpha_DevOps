@@ -14,7 +14,8 @@
 | Azure Container Registry | `codealphacr15128` | Login: `codealphacr15128.azurecr.io` · Admin enabled |
 | Resource Group (Web App) | `codealpha-devops-rg2` | Used because B1 had no capacity in original RG |
 | App Service Plan | `ASP-codealphadevopsrg2-9b83` | Linux · **Free F1** · Central India |
-| Web App | *(open from deployment — typically `codealphaweb15128`)* | Publish: **Container** |
+| Web App | `codealphaweb15128` | Status: **Running** · Publish: Container |
+| Default URL | `https://codealphaweb15128-bsbfcadraghjg9ft.centralindia-01.azurewebsites.net` | Central India |
 
 > Note: App Service **B1** failed in `codealpha-devops-rg` due to regional capacity. Creating a **new resource group** + **Free F1** succeeded (as suggested by Azure).
 
@@ -28,14 +29,22 @@ Azure Portal showed a successful deployment for the Web App in resource group `c
 
 **Figure 1:** Deployment complete — Subscription: Azure for Students · Resource group: `codealpha-devops-rg2` · Start time: 7/26/2026, 4:16:26 PM.
 
+## Screenshot — Web App overview (Running)
+
+![Web App overview](./screenshots/02_webapp_overview_running.png)
+
+**Figure 2:** Web App `codealphaweb15128` — Running · Central India · Plan F1 · Container publish.
+
 ---
 
 ## Next steps
 
-1. Confirm Web App name and default URL (`https://<name>.azurewebsites.net`)  
+1. ~~Confirm Web App name and URL~~ ✅  
 2. Create Azure DevOps project + pipeline  
 3. Service connections: `acr-connection` + Azure Resource Manager  
 4. Pipeline builds `task4-docker-webserver` → pushes to ACR → deploys to App Service  
+
+> Note: Free **F1** may limit custom container pulls from ACR. If deploy fails, keep CI as build+push to ACR and upgrade plan to B1 when capacity is available.
 
 ---
 
@@ -44,5 +53,5 @@ Azure Portal showed a successful deployment for the Web App in resource group `c
 ```yaml
 acrLoginServer: 'codealphacr15128.azurecr.io'
 imageName: 'codealpha-webserver'
-# appName: '<your-web-app-name>'
+appServiceName: 'codealphaweb15128'
 ```
