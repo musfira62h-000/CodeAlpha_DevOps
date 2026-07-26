@@ -118,3 +118,10 @@ Chose configuration templates screen (Connect → Select → Configure).
 
 **Figure 10:** Pipeline run `#20260726.1` — Set up CI with Azure Pipelines (in progress / summary).
 
+
+## Screenshot — Pipeline succeeded
+
+![Pipeline succeeded](./screenshots/11_pipeline_succeeded.png)
+
+**Figure 11:** Pipeline run succeeded (~1m 41s). Minor warning on Build and push to ACR output file (non-blocking).
+
